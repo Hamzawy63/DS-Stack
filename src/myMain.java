@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class myMain {
     public static class arrayStack<E> implements Stack<E>
@@ -79,8 +80,36 @@ public class myMain {
             return data.getFirst();
         }
     }
+    public static boolean checkHtmlCode(String Code) /*Application for stack*/
+    {
+        Stack<String> HtmlTags = new linkedListStack<>();
+        int k,j = Code.indexOf('<');
+        while(j!=-1)
+        {
+            k = Code.indexOf('>',j+1);
+            if(k==-1)
+                return false;
+            String tagName = Code.substring(j+1,k);
+            if(tagName.startsWith("/"))
+            {
+                if(HtmlTags.isEmpty()) {
+                    return false;
+                }else {
+                    if (HtmlTags.top() == tagName.substring(1))
+                  HtmlTags.pop();
+                }
+            }else{
+                HtmlTags.push(tagName);
+            }
+            j = Code.indexOf('<',j+1);
 
+
+        }
+
+        return false ;
+    }
     public static void main(String[] args) {
+        /**
         Stack<Integer> S = new linkedListStack<>();
         S.push(10);
         S.push(10);
@@ -96,8 +125,13 @@ public class myMain {
         S.push(1200);
         S.push(12000);
         S.push(120164);
+        **/
+        //Scanner sc = new Scanner(System.in);
+        //String Html = sc.nextLine();
+        //System.out.println(" html is "+checkHtmlCode(Html));
+        String f = "HamzaHassan";
+        System.out.println(f.substring(0,5));
 
-
-
+        //
     }
 }
