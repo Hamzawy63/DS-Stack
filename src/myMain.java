@@ -95,7 +95,7 @@ public class myMain {
                 if(HtmlTags.isEmpty()) {
                     return false;
                 }else {
-                    if (HtmlTags.top() == tagName.substring(1))
+                    if(HtmlTags.top().equals(tagName.substring(1)));
                   HtmlTags.pop();
                 }
             }else{
@@ -106,7 +106,7 @@ public class myMain {
 
         }
 
-        return false ;
+        return HtmlTags.isEmpty() ;
     }
     public static void main(String[] args) {
         /**
@@ -126,11 +126,10 @@ public class myMain {
         S.push(12000);
         S.push(120164);
         **/
-        //Scanner sc = new Scanner(System.in);
-        //String Html = sc.nextLine();
-        //System.out.println(" html is "+checkHtmlCode(Html));
-        String f = "HamzaHassan";
-        System.out.println(f.substring(0,5));
+        Scanner sc = new Scanner(System.in);
+        String Html = " <html> <body> <p>This is a paragraph.</p> <p>This is another paragraph.</p> </body> </html>";
+        System.out.println(" html is "+checkHtmlCode(Html));
+
 
         //
     }
